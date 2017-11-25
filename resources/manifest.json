@@ -1,0 +1,34 @@
+{
+  "name": "Hello World.cljs",
+  "version": "1.0",
+  "description": "Writing Chrome/Firefox extension in ClojureScript",
+  "background": {
+    "page": "background/index.html"
+  },
+  "options_ui": {
+    "page": "option/index.html",
+    "chrome_style": false,
+    "open_in_tab": true
+  },
+  "icons": {
+    "32": "option/images/cljs_32.png",
+    "16": "option/images/cljs_16.png",
+    "48": "option/images/cljs_48.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "32": "option/images/cljs_32.png",
+      "16": "option/images/cljs_16.png",
+      "48": "option/images/cljs_48.png"
+    }
+  },
+  "permissions": ["http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_end",
+      "js": ["content/js/main.js"]
+    }
+  ],
+  "manifest_version": 2
+}
