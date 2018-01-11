@@ -26,6 +26,7 @@ lein with-profile +dev-background do clean, figwheel
 # 编译 content script
 lein with-profile +dev-content do clean, cljsbuild auto
 ```
+使用上面三个命令生成三份 JS 文件后，在 Chrome 的 `chrome://extensions/` 页面勾选 Developer Mode，然后点击「Load unpacked extension...」，这时会弹出文件选择窗，选择本项目的 resources/dev 就可以了。
 
 ## 发布
 
